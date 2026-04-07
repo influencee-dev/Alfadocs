@@ -76,7 +76,7 @@ export default function Solution() {
                 width: '815.42px',
                 height: '818.15px',
                 top: '-165px',
-                left: '480.59px',
+                left: '530.59px',
                 opacity: 1
               }}
             >
