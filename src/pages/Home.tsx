@@ -18,7 +18,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="text-center z-10"
         >
-          <h1 className="font-heading font-bold text-[60px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-8">
+          <h1 className="font-heading font-bold text-[45px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-8">
             Rendi governabile <br /> la complessità del tuo studio.
           </h1>
 
