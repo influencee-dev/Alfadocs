@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Calendar, BarChart2, MessageSquare, ClipboardList, ArrowRight } from 'lucide-react';
 
 export default function Home() {
@@ -32,7 +33,7 @@ export default function Home() {
           </p>
           
           <div className="flex justify-center gap-4 mb-12">
-            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#5650c4] transition-all hover:scale-105">
+            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105">
               Call to action
             </button>
             <button className="bg-transparent border border-[#6761E5] text-[#6761E5] px-8 py-4 rounded-2xl font-bold hover:bg-[#e0deff] transition-all hover:scale-105">
@@ -98,19 +99,45 @@ export default function Home() {
       {/* Un sistema unico Section */}
       <section className="bg-[#39357E] rounded-[45px] my-16 mx-6 overflow-hidden">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-stretch">
-          <div className="py-24 px-6 lg:pr-16 space-y-6">
+          <div className="py-24 px-6 lg:pr-16 space-y-8">
             <h2 className="font-heading font-bold text-[54px] leading-[105%] tracking-[-3%] text-white">
               Un sistema unico <br /> per governare <br /> la complessità
             </h2>
             <p className="font-serif text-lg text-white/80 max-w-md">
               Quattro aree funzionali integrate: dalla cartella clinica alla reportistica, dalla prenotazione online al marketing automatico.
             </p>
+            
+            {/* 4 Pillars */}
+            <div className="grid grid-cols-2 gap-6 pt-4">
+              {[
+                { name: 'Organizzazione', path: '/soluzioni/organizzazione:-agenda-&-prenotazioni' },
+                { name: 'Gestione', path: '/soluzioni/gestione:-documentazione-e-strumenti-clinici' },
+                { name: 'Relazione', path: '/soluzioni/relazione:-comunicazione-&-marketing' },
+                { name: 'Analisi', path: '/soluzioni/analisi:-fatturazione-e-reportistica' }
+              ].map((pillar, i) => (
+                <motion.div
+                  key={pillar.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                >
+                  <Link to={pillar.path} className="text-white/90 hover:text-[#b380f8] font-bold flex items-center gap-2 group transition-colors text-lg">
+                    <span className="w-2 h-2 bg-[#E040FB] rounded-full"></span>
+                    {pillar.name}
+                    <ArrowRight size={18} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <div className="relative flex items-stretch">
-            <img 
+          <div className="relative flex items-stretch justify-end">
+            <motion.img 
+              initial={{ opacity: 0, x: 100, rotate: 5 }}
+              whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               src="/soluzionihome.png" 
               alt="Soluzioni" 
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-right"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -153,7 +180,7 @@ export default function Home() {
             <ul className="space-y-2 font-heading font-bold text-[16px] leading-[140%] tracking-[-0.5%] text-[#292E53]">
               {['Prenotazione diretta da Google, sito web o link', 'Lista d\'attesa e gestione cancellazioni automatica', 'Agenda per operatore e per poltrona', 'Reminder personalizzabili su ogni canale'].map(item => <li key={item} className="flex items-center gap-2">✓ {item}</li>)}
             </ul>
-            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#5650c4] transition-all hover:scale-105">Call to action</button>
+            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105">Call to action</button>
           </div>
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
@@ -164,7 +191,7 @@ export default function Home() {
             <img 
               src="/agenda.png" 
               alt="Agenda" 
-              className="w-full h-auto max-w-2xl rounded-[3rem] shadow-lg" 
+              className="w-full h-auto max-w-2xl" 
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -181,7 +208,7 @@ export default function Home() {
             <img 
               src="/documenti.png" 
               alt="Documenti" 
-              className="w-full h-auto max-w-2xl rounded-[3rem] shadow-lg" 
+              className="w-full h-auto max-w-2xl" 
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -195,7 +222,7 @@ export default function Home() {
             <ul className="space-y-2 font-heading font-bold text-[16px] leading-[140%] tracking-[-0.5%] text-[#292E53]">
               {['Firma digitale e grafometrica integrata', 'Scribe AI: appunti clinici trascritti automaticamente', 'Patient Summary AI: anamnesi riassunta in un click', 'Radiografie e immagini collegate alla cartella', 'Integrazione FSE 2.0 e Sistema TS'].map(item => <li key={item} className="flex items-center gap-2">✓ {item}</li>)}
             </ul>
-            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#5650c4] transition-all hover:scale-105">Call to action</button>
+            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105">Call to action</button>
           </div>
         </div>
 
@@ -211,7 +238,7 @@ export default function Home() {
             <ul className="space-y-2 font-heading font-bold text-[16px] leading-[140%] tracking-[-0.5%] text-[#292E53]">
               {['Report fatturazione e incassi in tempo reale', 'KPI per operatore, poltrona e prestazione', 'Previsioni economiche a medio-lungo termine', 'Business Intelligence multi-studio'].map(item => <li key={item} className="flex items-center gap-2">✓ {item}</li>)}
             </ul>
-            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#5650c4] transition-all hover:scale-105">Call to action</button>
+            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105">Call to action</button>
           </div>
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
@@ -222,7 +249,7 @@ export default function Home() {
             <img 
               src="/decisioni.png" 
               alt="Decisioni" 
-              className="w-full h-auto max-w-2xl rounded-[3rem] shadow-lg" 
+              className="w-full h-auto max-w-2xl" 
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -266,7 +293,7 @@ export default function Home() {
             Prenota una demo gratuita e scopri come AlfaDocs può rendere governabile la complessità della tua struttura. Configurazione guidata inclusa
           </p>
           <div className="flex justify-center gap-4 pt-4">
-            <button className="bg-[#E040FB] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#c939e1] transition-all flex items-center gap-2">
+            <button className="bg-[#E040FB] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all flex items-center gap-2">
               Prenota una Demo →
             </button>
             <button className="bg-transparent border border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all">
