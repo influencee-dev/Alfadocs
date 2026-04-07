@@ -29,7 +29,7 @@ export default function Solution() {
     return (
       <div className="w-full bg-[#FEFEFD] min-h-screen pt-[96px]">
         {/* Custom Hero Section for Agenda Avanzata */}
-        <section className="max-w-[1280px] mx-auto px-6 py-12 min-h-[558px] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section className="relative max-w-[1280px] mx-auto px-6 py-12 min-h-[558px] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -67,19 +67,26 @@ export default function Solution() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex justify-end"
-          >
-            <img 
-              src="/heroorg.png" 
-              alt="Agenda Avanzata Hero" 
-              className="w-full h-auto max-w-2xl object-contain"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="absolute pointer-events-none"
+              style={{
+                width: '815.42px',
+                height: '818.15px',
+                top: '-126.05px',
+                left: '494.59px',
+                opacity: 1
+              }}
+            >
+              <img 
+                src="/heroorg.png" 
+                alt="Agenda Avanzata Hero" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
         </section>
 
         {/* Stats Section */}
@@ -151,7 +158,7 @@ export default function Solution() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-24 px-6 bg-[#39357E] rounded-[45px] my-16 mx-6 text-center text-white overflow-hidden relative">
+        <section className="pt-24 px-6 bg-[#39357E] rounded-[45px] my-16 mx-6 text-center text-white overflow-hidden relative">
           {/* sfum.png background effect */}
           <img 
             src="/sfum.png" 
@@ -160,7 +167,7 @@ export default function Solution() {
             style={{
               width: '683px',
               height: '682px',
-              top: '0',
+              bottom: '0',
               left: '-268px',
               opacity: 0.8
             }}
@@ -188,11 +195,12 @@ export default function Solution() {
             </p>
 
             {/* cta.png Image */}
-            <div className="pt-16">
+            <div className="pt-16 flex justify-center">
               <img 
                 src="/cta.png" 
                 alt="CTA Visual" 
-                className="w-full h-auto max-w-5xl mx-auto rounded-t-3xl"
+                className="w-full h-auto max-w-5xl rounded-t-3xl block align-bottom"
+                style={{ marginBottom: '-1px' }} // Ensure no sub-pixel gap
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -255,12 +263,19 @@ export default function Solution() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative flex justify-end"
+              className="absolute pointer-events-none"
+              style={{
+                width: '815.42px',
+                height: '818.15px',
+                top: '-126.05px',
+                left: '494.59px',
+                opacity: 1
+              }}
             >
               <img 
                 src="/heroorg.png" 
                 alt="Organizzazione Hero" 
-                className="w-full h-auto max-w-2xl object-contain"
+                className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
