@@ -41,9 +41,9 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
+    <header className="header sticky top-[20px] left-[21px] z-50 w-[calc(100%-42px)] rounded-[15px]">
       <nav className="navbar">
-        <Link to="/" className="navbar-brand">Alfadocs</Link>
+        <Link to="/" className="navbar-brand"><img src="/logo.png" alt="Alfadocs" className="h-8" /></Link>
 
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           
@@ -203,22 +203,34 @@ export default function Header() {
             onMouseEnter={(e) => handleMouseEnter(e, 'academy')}
             onMouseLeave={handleMouseLeave}
           >
-            <button 
-              className="w-full text-left flex items-center justify-between lg:justify-start py-5 px-6 lg:py-0 lg:px-4 text-[1.1rem] lg:text-[0.95rem] font-medium text-[var(--text-main)] hover:text-[var(--theme-primary)] transition-colors duration-200"
-              onClick={(e) => handleMobileDropdownClick(e, 'academy')}
-              aria-expanded={activeDropdown === 'academy'}
-            >
-              Academy <span className="arrow" style={{ transform: activeDropdown === 'academy' ? 'rotate(180deg)' : 'rotate(0deg)' }}>&#9662;</span>
-            </button>
+            <div className="w-full flex items-center justify-between lg:justify-start py-5 px-6 lg:py-0 lg:px-4 text-[1.1rem] lg:text-[0.95rem] font-medium text-[var(--text-main)] hover:text-[var(--theme-primary)] transition-colors duration-200">
+              <Link 
+                to="/academy" 
+                className="flex-1 text-left text-inherit no-underline hover:text-[var(--theme-primary)]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Academy
+              </Link>
+              <button 
+                className="p-2 -mr-2 flex items-center justify-center bg-transparent border-none cursor-pointer text-inherit hover:text-[var(--theme-primary)]"
+                onClick={(e) => handleMobileDropdownClick(e, 'academy')}
+                aria-expanded={activeDropdown === 'academy'}
+                aria-label="Apri sottomenu Academy"
+              >
+                <span className="arrow" style={{ transform: activeDropdown === 'academy' ? 'rotate(180deg)' : 'rotate(0deg)' }}>&#9662;</span>
+              </button>
+            </div>
             <div className={`dropdown-simple ${activeDropdown === 'academy' ? 'active' : ''}`}>
               <div className="menu-card">
-                <div className="card-static-header">
+                <Link to="/academy" className="card-main-link" onClick={() => setIsMobileMenuOpen(false)}>
                   <div className="card-title-wrap">
                     <h3 className="card-title-main">Academy</h3>
                     <span className="card-subtitle">Impara con Alfadocs</span>
                   </div>
-                </div>
+                  <span className="link-arrow">&rarr;</span>
+                </Link>
                 <ul className="menu-list">
+                  <li><Link to="/academy" onClick={() => setIsMobileMenuOpen(false)}>Panoramica Academy</Link></li>
                   <li><Link to="/academy/case-study" onClick={() => setIsMobileMenuOpen(false)}>Case Study</Link></li>
                   <li><Link to="/academy/guide-&-toolkit" onClick={() => setIsMobileMenuOpen(false)}>Guide & Toolkit</Link></li>
                   <li>

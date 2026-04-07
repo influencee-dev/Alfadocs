@@ -86,7 +86,7 @@ export default function Solution() {
               className="relative"
             >
               <div className="absolute -inset-4 bg-[var(--theme-accent)] rounded-[32px] opacity-20 -z-10 transform translate-y-4 translate-x-4"></div>
-              <div className="rounded-2xl overflow-hidden shadow-2xl bg-white border border-[var(--card-border)] aspect-square lg:aspect-[4/3]">
+              <div className="rounded-2xl overflow-hidden shadow-2xl bg-[var(--bg-card)] border border-[var(--card-border)] aspect-square lg:aspect-[4/3]">
                 <img 
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
                   alt={`${title} Preview`} 
@@ -157,7 +157,7 @@ export default function Solution() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 px-6 text-center bg-white border-t border-[var(--border-color)]">
+      <section className="py-24 px-6 text-center bg-[var(--bg-card)] border-t border-[var(--border-color)]">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[var(--theme-primary)]">Pronto a trasformare il tuo studio?</h2>
           <p className="text-[var(--text-muted)] text-lg mb-10">

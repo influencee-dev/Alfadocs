@@ -9,6 +9,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import Solution from './pages/Solution';
+import Academy from './pages/Academy';
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
           <Route path="branche/:id" element={<Solution />} />
           <Route path="risorse" element={<Solution />} />
           <Route path="risorse/:id" element={<Solution />} />
-          <Route path="academy" element={<Solution />} />
+          <Route path="academy" element={<Academy />} />
           <Route path="academy/:id" element={<Solution />} />
           <Route path="academy/blog" element={<Solution />} />
           <Route path="academy/blog/:id" element={<Solution />} />

@@ -63,7 +63,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="w-full pt-20 pb-32 bg-white">
+    <div className="w-full pt-20 pb-32 bg-[var(--bg-body)]">
       <div className="max-w-[1300px] mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export default function Pricing() {
                 className={`px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
                   activeSector === sector
                     ? 'bg-[var(--theme-primary)] text-white shadow-md'
-                    : 'bg-white border border-[var(--border-color)] text-[var(--text-muted)] hover:border-[var(--theme-primary)] hover:text-[var(--theme-primary)]'
+                    : 'bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-muted)] hover:border-[var(--theme-primary)] hover:text-[var(--theme-primary)]'
                 }`}
               >
                 {sector}
@@ -104,7 +104,7 @@ export default function Pricing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative flex flex-col p-8 rounded-3xl border bg-white ${
+              className={`relative flex flex-col p-8 rounded-3xl border bg-[var(--bg-card)] ${
                 plan.highlighted 
                   ? 'border-[var(--theme-primary)] shadow-2xl transform md:-translate-y-4' 
                   : 'border-[var(--border-color)] shadow-sm'
@@ -122,7 +122,7 @@ export default function Pricing() {
               <button className={`w-full py-3 rounded-xl font-bold mb-8 transition-all ${
                 plan.highlighted
                   ? 'bg-[var(--theme-primary)] text-white hover:bg-[var(--hover-purple)]'
-                  : 'bg-white border border-[var(--border-color)] text-[var(--theme-primary)] hover:border-[var(--hover-purple)] hover:text-[var(--hover-purple)]'
+                  : 'bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--theme-primary)] hover:border-[var(--hover-purple)] hover:text-[var(--hover-purple)]'
               }`}>
                 {plan.buttonText}
               </button>
@@ -183,7 +183,7 @@ export default function Pricing() {
               a: "Sì, il nostro team tecnico ti assisterà gratuitamente nella migrazione dei dati dal tuo vecchio gestionale verso Alfadocs."
             }
           ].map((faq, i) => (
-            <div key={i} className="bg-white p-6 rounded-2xl border border-[var(--border-color)] shadow-sm">
+            <div key={i} className="bg-[var(--bg-card)] p-6 rounded-2xl border border-[var(--border-color)] shadow-sm">
               <h4 className="text-lg font-bold text-[var(--text-main)] mb-2">{faq.q}</h4>
               <p className="text-[var(--text-muted)]">{faq.a}</p>
             </div>
@@ -192,7 +192,7 @@ export default function Pricing() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 px-6 text-center bg-white border-t border-[var(--border-color)]">
+      <section className="py-24 px-6 text-center bg-[var(--bg-card)] border-t border-[var(--border-color)]">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[var(--theme-primary)]">Pronto a iniziare?</h2>
           <p className="text-[var(--text-muted)] text-lg mb-10">

@@ -9,8 +9,7 @@ export default function Footer() {
         
         <div className="col-span-1 md:col-span-1">
           <Link to="/" className="text-2xl font-bold text-[var(--theme-primary)] no-underline tracking-tight flex items-center gap-1.5 mb-4">
-            <span className="block w-2.5 h-2.5 bg-[var(--theme-accent)] rounded-full"></span>
-            Alfadocs
+            <img src="/logo.png" alt="Alfadocs" className="h-8" />
           </Link>
           <p className="text-[var(--text-muted)] text-sm mb-6">
             Semplifica la gestione del tuo studio medico con il software in cloud più avanzato.
