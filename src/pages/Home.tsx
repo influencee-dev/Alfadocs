@@ -97,9 +97,24 @@ export default function Home() {
       </section>
 
       {/* Un sistema unico Section */}
-      <section className="bg-[#39357E] rounded-[45px] my-16 mx-6 overflow-hidden">
-        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-stretch">
-          <div className="py-24 px-6 lg:pr-16 space-y-8">
+      <section className="relative bg-[#39357E] rounded-[45px] my-16 mx-6 overflow-hidden min-h-[600px]">
+        {/* sfum.png background effect */}
+        <img 
+          src="/sfum.png" 
+          alt="" 
+          className="absolute pointer-events-none z-0"
+          style={{
+            width: '683px',
+            height: '682px',
+            top: '214px',
+            left: '-268px',
+            opacity: 1
+          }}
+          referrerPolicy="no-referrer"
+        />
+
+        <div className="max-w-[1280px] mx-auto relative z-10">
+          <div className="py-24 px-6 lg:w-1/2 space-y-8">
             <h2 className="font-heading font-bold text-[54px] leading-[105%] tracking-[-3%] text-white">
               Un sistema unico <br /> per governare <br /> la complessità
             </h2>
@@ -130,17 +145,19 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="relative flex items-center justify-end overflow-hidden">
-            <motion.img 
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              src="/soluzionihome.png" 
-              alt="Soluzioni" 
-              className="h-full w-auto object-contain object-right"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+        </div>
+
+        {/* Main Image aligned to the right edge of the section */}
+        <div className="absolute top-0 right-0 h-full w-1/2 hidden lg:flex items-center justify-end z-0">
+          <motion.img 
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            src="/soluzionihome.png" 
+            alt="Soluzioni" 
+            className="h-full w-auto object-contain object-right"
+            referrerPolicy="no-referrer"
+          />
         </div>
       </section>
 
