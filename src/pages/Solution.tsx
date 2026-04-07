@@ -75,8 +75,8 @@ export default function Solution() {
               style={{
                 width: '815.42px',
                 height: '818.15px',
-                top: '-165px',
-                left: '590.59px',
+                top: '-175px',
+                left: '600.59px',
                 opacity: 1
               }}
             >
