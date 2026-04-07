@@ -267,7 +267,7 @@ export default function Solution() {
               style={{
                 width: '815.42px',
                 height: '818.15px',
-                top: '-165.05px',
+                top: '-180.05px',
                 left: '480.59px',
                 opacity: 1
               }}
