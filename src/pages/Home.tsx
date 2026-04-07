@@ -130,14 +130,14 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="relative flex items-stretch justify-end">
+          <div className="relative flex items-center justify-end overflow-hidden">
             <motion.img 
-              initial={{ opacity: 0, x: 100, rotate: 5 }}
-              whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               src="/soluzionihome.png" 
               alt="Soluzioni" 
-              className="w-full h-full object-cover object-right"
+              className="h-full w-auto object-contain object-right"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -191,7 +191,7 @@ export default function Home() {
             <img 
               src="/agenda.png" 
               alt="Agenda" 
-              className="w-full h-auto max-w-2xl" 
+              className="w-full h-auto max-w-lg" 
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -208,7 +208,7 @@ export default function Home() {
             <img 
               src="/documenti.png" 
               alt="Documenti" 
-              className="w-full h-auto max-w-2xl" 
+              className="w-full h-auto max-w-lg" 
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -249,7 +249,7 @@ export default function Home() {
             <img 
               src="/decisioni.png" 
               alt="Decisioni" 
-              className="w-full h-auto max-w-2xl" 
+              className="w-full h-auto max-w-lg" 
               referrerPolicy="no-referrer"
             />
           </motion.div>
