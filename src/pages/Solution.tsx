@@ -21,6 +21,276 @@ export default function Solution() {
   // Only use the sub-solution hero if both category and id are present (e.g., /soluzioni/gestione/cartella-clinica)
   const isSubSolution = !!category && !!id;
 
+  // Check if it's the specific "organizzazione" page
+  const isOrganizzazione = category === 'organizzazione:-agenda-&-prenotazioni' && !id;
+  const isAgendaAvanzata = id === 'agenda-avanzata-';
+
+  if (isAgendaAvanzata) {
+    return (
+      <div className="w-full bg-[#FEFEFD] min-h-screen pt-[96px]">
+        {/* Custom Hero Section for Agenda Avanzata */}
+        <section className="max-w-[1280px] mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8"
+          >
+            <span 
+              className="font-serif text-[#292E53] tracking-[-0.5%] leading-[145%] block"
+              style={{ fontSize: '30px', fontWeight: 400 }}
+            >
+              Gestione
+            </span>
+            
+            <h1 
+              className="font-heading font-bold text-[#6761E5] tracking-[-2%] leading-[110%]"
+              style={{ fontSize: '56px' }}
+            >
+              La segreteria <br /> del tuo studio <br /> è inefficiente?
+            </h1>
+            
+            <p 
+              className="font-serif text-[#292E53] tracking-[-0.5%] leading-[145%]"
+              style={{ fontSize: '24px', fontWeight: 400 }}
+            >
+              Risparmia fino a 600 ore di lavoro inutile
+            </p>
+
+            <div className="flex flex-wrap gap-4 pt-4">
+              <button className="bg-[#6761E5] text-white px-10 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105 text-lg">
+                Prova subito
+              </button>
+              <button className="bg-transparent border border-[#292E53]/20 text-[#6761E5] px-10 py-4 rounded-xl font-bold hover:bg-[#6761E5]/5 transition-all hover:scale-105 text-lg">
+                Guarda la Demo
+              </button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative flex justify-end"
+          >
+            <img 
+              src="/heroorg.png" 
+              alt="Agenda Avanzata Hero" 
+              className="w-full h-auto max-w-2xl object-contain"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-24 px-6 max-w-[1280px] mx-auto">
+          <p className="font-serif text-[#E040FB] text-lg mb-12">Lorem ipsum dolor sit amet</p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+            {[
+              { icon: 'phone', val: "30%", desc: "in meno di chiamate", color: "#6761E5" },
+              { icon: 'clock', val: "600", desc: "ore di lavoro risparmiate", color: "#6761E5" },
+              { icon: 'grid', val: "111", desc: "Lorem ipsum", color: "#6761E5" },
+              { icon: 'cards', val: "111", desc: "Lorem ipsum", color: "#E040FB" }
+            ].map((stat, i) => (
+              <div key={i} className="flex items-center gap-6">
+                <div className="flex-shrink-0">
+                  {stat.icon === 'phone' && <img src="https://api.iconify.design/lucide:phone.svg?color=%23292E53" alt="" className="w-10 h-10" />}
+                  {stat.icon === 'clock' && <img src="https://api.iconify.design/lucide:alarm-clock-check.svg?color=%23292E53" alt="" className="w-10 h-10" />}
+                  {stat.icon === 'grid' && <img src="https://api.iconify.design/lucide:layout-grid.svg?color=%23292E53" alt="" className="w-10 h-10" />}
+                  {stat.icon === 'cards' && <img src="https://api.iconify.design/lucide:layers.svg?color=%23E040FB" alt="" className="w-10 h-10" />}
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-[54px] font-bold leading-none tracking-tight" style={{ color: stat.color }}>{stat.val}</h3>
+                  <p className="text-[#292E53] font-serif text-lg leading-tight">{stat.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* We've cracked the code Section */}
+        <section className="py-24 px-6 bg-white">
+          <div className="max-w-[1280px] mx-auto">
+            <div className="mb-24">
+              <h2 className="font-heading font-bold text-[56px] text-[#6761E5] leading-tight mb-6">We've cracked the code</h2>
+              <p className="font-serif text-[#545875] text-lg">Lorem ipsum dolor sit amet consolateur ipsem amet dolor ipsum.</p>
+            </div>
+
+            <div className="space-y-32">
+              {/* Row 1 */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="space-y-8">
+                  <h3 className="font-heading font-bold text-[40px] text-[#292E53] leading-tight">Aumenta le prenotazioni <br /> e fidelizza i clienti</h3>
+                  <p className="font-serif text-[#545875] text-lg leading-relaxed">Personalizza e automatizza l'invio di richiami, promemoria, campagne e questionari di soddisfazione.</p>
+                  <button className="bg-[#E040FB] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105">Call to action</button>
+                </div>
+                <div className="bg-[#8E92A6] rounded-[32px] aspect-video w-full"></div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="bg-[#8E92A6] rounded-[32px] aspect-video w-full lg:order-1"></div>
+                <div className="space-y-8 lg:order-2">
+                  <h3 className="font-heading font-bold text-[40px] text-[#292E53] leading-tight">Velocizza le procedure <br /> e riduci i costi e la carta</h3>
+                  <p className="font-serif text-[#545875] text-lg leading-relaxed">Digitalizza la gestione documentale e automatizza l'accettazione.</p>
+                  <button className="bg-[#E040FB] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105">Another butt...</button>
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="space-y-8">
+                  <h3 className="font-heading font-bold text-[40px] text-[#292E53] leading-tight">Aumenta i profitti</h3>
+                  <p className="font-serif text-[#545875] text-lg leading-relaxed">Accedi a report sempre aggiornati sull'andamento economico dello studio per capire dove e come intervenire.</p>
+                  <button className="bg-[#E040FB] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105">Call to action</button>
+                </div>
+                <div className="bg-[#8E92A6] rounded-[32px] aspect-video w-full"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-24 px-6 bg-[#39357E] rounded-[45px] my-16 mx-6 text-center text-white overflow-hidden relative">
+          {/* sfum.png background effect */}
+          <img 
+            src="/sfum.png" 
+            alt="" 
+            className="absolute pointer-events-none z-0"
+            style={{
+              width: '683px',
+              height: '682px',
+              top: '0',
+              left: '-268px',
+              opacity: 0.8
+            }}
+            referrerPolicy="no-referrer"
+          />
+          <div className="max-w-4xl mx-auto space-y-8 relative z-10">
+            <h2 className="font-heading font-bold text-[56px] leading-[110%] tracking-[-2%]">
+              Metti il tuo studio sul pilota <br /> automatico.
+            </h2>
+            <p className="font-serif text-lg text-white/80 max-w-2xl mx-auto">
+              Prenota una demo gratuita e scopri come AlfaDocs può rendere governabile la complessità della tua struttura. Configurazione guidata inclusa
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <button className="bg-[#E040FB] text-white px-10 py-4 rounded-xl font-bold hover:bg-[#b380f8] transition-all flex items-center gap-2 text-lg">
+                Prenota una Demo <span className="flex items-center justify-center w-6 h-6 bg-white/20 rounded-full">→</span>
+              </button>
+              <button className="bg-transparent border border-white/30 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/10 transition-all text-lg">
+                Parla con un esperto
+              </button>
+            </div>
+            
+            <p className="text-sm text-white/60 pt-4">
+              Numero verde 800.160690 · Risposta entro 24h
+            </p>
+
+            {/* cta.png Image */}
+            <div className="pt-16">
+              <img 
+                src="/cta.png" 
+                alt="CTA Visual" 
+                className="w-full h-auto max-w-5xl mx-auto rounded-t-3xl"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (isOrganizzazione) {
+    return (
+      <div className="w-full bg-[#FEFEFD] min-h-screen pt-[20px] pb-24">
+        {/* Custom Hero Section for Organizzazione */}
+        <section className="relative w-[calc(100%-42px)] mx-auto min-h-[825px] bg-[#39357E] rounded-[45px] overflow-hidden flex items-center">
+          {/* sfum2.png background effect */}
+          <img 
+            src="/sfum2.png" 
+            alt="" 
+            className="absolute bottom-0 left-0 pointer-events-none z-0"
+            style={{ opacity: 1 }}
+            referrerPolicy="no-referrer"
+          />
+
+          <div className="max-w-[1280px] mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <h1 
+                className="font-heading font-bold text-white tracking-[-3%] leading-[105%]"
+                style={{ fontSize: '58.14px' }}
+              >
+                Lorem ipsum <br /> dolor sit amet <br /> dolor lorem
+              </h1>
+              
+              <p 
+                className="font-serif text-white/80 tracking-[-0.5%] leading-[100%] max-w-md"
+                style={{ fontSize: '16.53px', fontWeight: 350 }}
+              >
+                Quattro aree funzionali integrate: dalla cartella clinica alla reportistica, dalla prenotazione online al marketing automatico.
+              </p>
+
+              <div className="flex items-center gap-4 text-white pt-4">
+                <div className="flex -space-x-3">
+                  {[1, 2].map((i) => (
+                    <div key={i} className="w-12 h-12 rounded-full bg-gray-400 border-2 border-[#39357E]"></div>
+                  ))}
+                  <div className="w-12 h-12 rounded-full bg-transparent border-2 border-white flex items-center justify-center text-white font-bold text-lg">+</div>
+                </div>
+                <div className="space-y-0.5">
+                  <p className="font-heading font-bold text-[#E040FB] text-lg leading-tight">7.000+ professionisti</p>
+                  <p className="font-serif text-white/70 text-sm leading-tight">gestiscono il loro studio con AlfaDocs</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative flex justify-end"
+            >
+              <img 
+                src="/heroorg.png" 
+                alt="Organizzazione Hero" 
+                className="w-full h-auto max-w-2xl object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Trusted By Section */}
+        <div className="mt-16 max-w-[1280px] mx-auto px-6 text-center">
+          <p className="text-[10px] text-[#E040FB] mb-6 uppercase tracking-widest font-bold">TRUSTED BY:</p>
+          <div className="flex justify-center items-center gap-12 opacity-70">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="h-8 w-24 bg-[#E040FB] rounded-full"></div>
+            ))}
+          </div>
+        </div>
+
+        {/* The rest of the page content can follow here... */}
+        <section className="py-24 px-6 max-w-[1280px] mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#6761E5] mb-6">Perché scegliere {title}?</h2>
+            <p className="text-[#545875] max-w-2xl mx-auto text-lg font-serif">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+          {/* ... rest of the generic content ... */}
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full">
       {/* Hero Section */}
