@@ -96,9 +96,9 @@ export default function Home() {
       </section>
 
       {/* Un sistema unico Section */}
-      <section className="py-24 px-6 bg-[#39357E] rounded-[45px] my-16 mx-6">
-        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
+      <section className="bg-[#39357E] rounded-[45px] my-16 mx-6 overflow-hidden">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-stretch">
+          <div className="py-24 px-6 lg:pr-16 space-y-6">
             <h2 className="font-heading font-bold text-[54px] leading-[105%] tracking-[-3%] text-white">
               Un sistema unico <br /> per governare <br /> la complessità
             </h2>
@@ -106,8 +106,13 @@ export default function Home() {
               Quattro aree funzionali integrate: dalla cartella clinica alla reportistica, dalla prenotazione online al marketing automatico.
             </p>
           </div>
-          <div className="relative h-[500px] bg-white/10 rounded-[3rem] overflow-hidden flex items-center justify-center">
-            <img src="/soluzionihome.png" alt="Soluzioni" className="w-full h-full object-cover" />
+          <div className="relative flex items-stretch">
+            <img 
+              src="/soluzionihome.png" 
+              alt="Soluzioni" 
+              className="w-full h-full object-cover object-center"
+              referrerPolicy="no-referrer"
+            />
           </div>
         </div>
       </section>
@@ -154,9 +159,14 @@ export default function Home() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="h-[400px] bg-white/50 rounded-[3rem] flex items-center justify-center overflow-hidden"
+            className="flex items-center justify-center"
           >
-            <img src="/agenda.png" alt="Agenda" className="w-full h-full object-cover" />
+            <img 
+              src="/agenda.png" 
+              alt="Agenda" 
+              className="w-full h-auto max-w-2xl rounded-[3rem] shadow-lg" 
+              referrerPolicy="no-referrer"
+            />
           </motion.div>
         </div>
 
@@ -166,9 +176,14 @@ export default function Home() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="h-[400px] bg-white/50 rounded-[3rem] flex items-center justify-center lg:order-1 overflow-hidden"
+            className="flex items-center justify-center lg:order-1"
           >
-            <img src="/documenti.png" alt="Documenti" className="w-full h-full object-cover" />
+            <img 
+              src="/documenti.png" 
+              alt="Documenti" 
+              className="w-full h-auto max-w-2xl rounded-[3rem] shadow-lg" 
+              referrerPolicy="no-referrer"
+            />
           </motion.div>
           <div className="space-y-6 lg:order-2">
             <div className="flex gap-4">
@@ -202,9 +217,14 @@ export default function Home() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="h-[400px] bg-white/50 rounded-[3rem] flex items-center justify-center overflow-hidden"
+            className="flex items-center justify-center"
           >
-            <img src="/decisioni.png" alt="Decisioni" className="w-full h-full object-cover" />
+            <img 
+              src="/decisioni.png" 
+              alt="Decisioni" 
+              className="w-full h-auto max-w-2xl rounded-[3rem] shadow-lg" 
+              referrerPolicy="no-referrer"
+            />
           </motion.div>
         </div>
       </section>

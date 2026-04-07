@@ -94,11 +94,6 @@
     @apply text-2xl font-bold text-[var(--theme-primary)] no-underline tracking-tight flex items-center gap-1.5;
   }
 
-  .navbar-brand::before {
-    content: '';
-    @apply block w-2.5 h-2.5 bg-[var(--theme-accent)] rounded-full;
-  }
-
   /* === CONTROLLI (Mobile + Dark Mode) === */
   .nav-controls { @apply flex items-center gap-4; }
 
