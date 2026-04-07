@@ -29,7 +29,7 @@ export default function Solution() {
     return (
       <div className="w-full bg-[#FEFEFD] min-h-screen pt-[96px]">
         {/* Custom Hero Section for Agenda Avanzata */}
-        <section className="max-w-[1280px] mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section className="max-w-[1280px] mx-auto px-6 py-12 min-h-[558px] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -206,7 +206,7 @@ export default function Solution() {
     return (
       <div className="w-full bg-[#FEFEFD] min-h-screen pt-[20px] pb-24">
         {/* Custom Hero Section for Organizzazione */}
-        <section className="relative w-[calc(100%-42px)] mx-auto min-h-[825px] bg-[#39357E] rounded-[45px] overflow-hidden flex items-center">
+        <section className="relative w-[calc(100%-42px)] mx-auto min-h-[558px] bg-[#39357E] rounded-[45px] overflow-hidden flex items-center">
           {/* sfum2.png background effect */}
           <img 
             src="/sfum2.png" 
